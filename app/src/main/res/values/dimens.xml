@@ -6,6 +6,7 @@
     <dimen name="text_size_medium">14sp</dimen>
     <dimen name="text_size_middle">16sp</dimen>
     <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">25sp</dimen>
     <dimen name="text_size_2xlarge">30sp</dimen>
 
 
@@ -17,7 +18,9 @@
     <dimen name="spade_xlarge">30dp</dimen>
     <dimen name="spade_2xlarge">40dp</dimen>
     <dimen name="spade_3xlarge">50dp</dimen>
+    <dimen name="spade_4xlarge">60dp</dimen>
     <dimen name="spade_80dp">80dp</dimen>
+    <dimen name="spade_100dp">100dp</dimen>
 
 
 </resources>

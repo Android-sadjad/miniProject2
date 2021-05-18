@@ -7,5 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bg_white_700">#fcfcfc</color>
     <color name="purple_bg">#704F84</color>
+    <color name="bg_btn_purple">#513960</color>
 </resources>
