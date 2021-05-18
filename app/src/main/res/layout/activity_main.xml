@@ -13,23 +13,39 @@
     android:paddingBottom="30dp" >
 
 
-    <ImageView
 
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/logo"
-        android:id="@+id/imageview"
+    <androidx.cardview.widget.CardView
+        android:layout_width="155dp"
+        android:layout_height="155dp"
+        app:cardCornerRadius="250dp"
+        android:id="@+id/cv_img"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintBottom_toTopOf="@id/cv_login"
+        app:cardBackgroundColor="@android:color/transparent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:cardCornerRadius="250dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/logo"
+                android:scaleType="centerCrop"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
 
 
-
-        />
 
 
     <androidx.cardview.widget.CardView
-app:layout_constraintTop_toBottomOf="@+id/imageview"
+
 
         android:id="@+id/cv_login"
         android:layout_width="match_parent"
@@ -40,7 +56,9 @@ app:layout_constraintTop_toBottomOf="@+id/imageview"
         app:cardCornerRadius="@dimen/spade_medium"
         app:cardElevation="@dimen/spade_large"
         app:cardPreventCornerOverlap="false"
-        app:cardUseCompatPadding="false">
+        app:cardUseCompatPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/cv_img"
+        >
 
 
 <LinearLayout
@@ -48,6 +66,9 @@ app:layout_constraintTop_toBottomOf="@+id/imageview"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingBottom="20dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
     android:gravity="center">
 
 
@@ -57,17 +78,19 @@ app:layout_constraintTop_toBottomOf="@+id/imageview"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spade_middle"
         android:hint="نام و نام خانوادگی"
+        app:startIconDrawable="@drawable/ic_person_bold"
+
         app:hintTextColor="@color/black"
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_phone"
+            android:id="@+id/eddit_name"
             android:layout_width="match_parent"
             android:fontFamily="@font/peyda_regular"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:gravity="center|right"
-            android:inputType="phone" />
+            android:gravity="center"
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,17 +99,18 @@ app:layout_constraintTop_toBottomOf="@+id/imageview"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spade_middle"
         android:hint="مهارت"
+        app:startIconDrawable="@drawable/ic_baseline_flash_on_24"
         app:hintTextColor="@color/black"
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_phone"
+            android:id="@+id/eddit_skill"
             android:layout_width="match_parent"
             android:fontFamily="@font/peyda_regular"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:gravity="center|right"
-            android:inputType="phone" />
+            android:gravity="center"
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,35 +119,37 @@ app:layout_constraintTop_toBottomOf="@+id/imageview"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spade_middle"
         android:hint="شغل"
+        app:startIconDrawable="@drawable/ic_baseline_work_24"
         app:hintTextColor="@color/black"
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_phone"
+            android:id="@+id/eddit_job"
             android:layout_width="match_parent"
             android:fontFamily="@font/peyda_regular"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:gravity="center|right"
-            android:inputType="phone" />
+            android:gravity="center"
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/ic_baseline_local_phone_24"
         android:layout_margin="@dimen/spade_middle"
         android:hint="تلفن همراه"
         app:hintTextColor="@color/black"
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_phone"
+            android:id="@+id/eddit_phone"
             android:layout_width="match_parent"
             android:fontFamily="@font/peyda_regular"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:gravity="center|right"
+            android:gravity="center"
             android:inputType="phone" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -133,17 +159,18 @@ app:layout_constraintTop_toBottomOf="@+id/imageview"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spade_middle"
         android:hint="کجا دیده شده"
+        app:startIconDrawable="@drawable/ic_baseline_where_to_vote_24"
         app:hintTextColor="@color/black"
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_phone"
+            android:id="@+id/eddit_where"
             android:layout_width="match_parent"
             android:fontFamily="@font/peyda_regular"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:gravity="center|right"
-            android:inputType="phone" />
+            android:gravity="center"
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -158,14 +185,14 @@ app:layout_constraintTop_toBottomOf="@+id/imageview"
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_phone"
+            android:id="@+id/eddit_description"
             android:background="@drawable/rectangle_shape"
             android:layout_width="match_parent"
             android:fontFamily="@font/peyda_regular"
             android:layout_height="160dp"
 
-            android:gravity="center|right"
-            android:inputType="phone" />
+            android:gravity="center"
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -185,6 +212,7 @@ app:layout_constraintTop_toBottomOf="@+id/imageview"
     app:layout_constraintTop_toBottomOf="@+id/cv_login"
     app:layout_constraintBottom_toBottomOf="@+id/cv_login"
     app:layout_constraintRight_toRightOf="parent"
+    app:cardCornerRadius="30dp"
    app:cardElevation="100dp"
     android:backgroundTint="@android:color/transparent"
     app:layout_constraintLeft_toLeftOf="parent">
@@ -192,8 +220,8 @@ app:layout_constraintTop_toBottomOf="@+id/imageview"
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
+        android:layout_height="60dp"
+        android:id="@+id/register_btn"
         app:layout_constraintTop_toBottomOf="@+id/cv_login"
         app:layout_constraintBottom_toBottomOf="@+id/cv_login"
         app:layout_constraintRight_toRightOf="parent"
