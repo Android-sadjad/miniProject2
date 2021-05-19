@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             GetImageFromGallery();
+            //salam
         }
     }
 
