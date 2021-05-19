@@ -11,7 +11,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -46,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         findViews();
         init();
         config();
+
 
     }
 
@@ -97,8 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (evaluate()) {
 
-            //   clientInfo.ImageAddress=clientImage.getResources().toString();
-
+            clientInfo.ImageAddress=clientImage.getResources().getDrawable(R.drawable.ic_person).toString();
             clientInfo.name = etName.getText().toString().trim();
             clientInfo.skill = etSkill.getText().toString().trim();
             clientInfo.job = etJob.getText().toString().trim();
@@ -107,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
             clientInfo.description = etDescription.getText().toString().trim();
 
             Toast.makeText(this, "اطلاعات با موفقیت ذخیره شد", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, clientInfo.getImageAddress(), Toast.LENGTH_SHORT).show();
 
         }
     }
@@ -140,18 +140,17 @@ public class MainActivity extends AppCompatActivity {
                 ActivityCompat.requestPermissions(MainActivity.this, new String[]{permission}, requestCode);
             }
         } else {
-            GetImageFromGallery();
-            //salam
+            getImageFromGallery();
         }
+
     }
 
-    private void GetImageFromGallery() {
+    private void getImageFromGallery() {
 
 
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
         startActivityForResult(photoPickerIntent, SELECT_PHOTO);
-
 
     }
 
@@ -161,6 +160,10 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == SELECT_PHOTO) {
             if (resultCode == RESULT_OK) {
                 Uri selectedImage = imageReturnedIntent.getData();
+
+                clientInfo.ImageAddress=selectedImage.getPath();
+              //  Toast.makeText(this, clientInfo.getImageAddress(), Toast.LENGTH_LONG).show();
+
                 InputStream imageStream = null;
                 try {
                     imageStream = getContentResolver().openInputStream(selectedImage);
@@ -173,5 +176,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
 
+        if (requestCode == REQUEST_CODE_READ_EXTERNAL) {
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                getImageFromGallery();
+
+            } else {
+                Toast.makeText(getApplicationContext(), "محوز داده نشد", Toast.LENGTH_SHORT).show();
+            }
+            return;
+        }
+    }
 }

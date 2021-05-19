@@ -14,9 +14,10 @@
         android:paddingBottom="@dimen/spade_xlarge">
 
         <androidx.cardview.widget.CardView
+            android:layout_marginTop="@dimen/spade_medium"
             android:id="@+id/cv_img"
-            android:layout_width="155dp"
-            android:layout_height="155dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             app:cardBackgroundColor="@android:color/transparent"
             app:cardCornerRadius="250dp"
             app:layout_constraintBottom_toTopOf="@id/cv_info"
@@ -24,20 +25,16 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                app:cardCornerRadius="250dp">
+
 
                 <ImageView
                     android:id="@+id/client_image"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/logo" />
+                    android:src="@drawable/ic_person" />
 
-            </androidx.cardview.widget.CardView>
+
 
         </androidx.cardview.widget.CardView>
 
@@ -65,12 +62,13 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-
                     style="@style/text_input_layout_style"
                     android:hint="@string/first_and_last_name"
+
                     app:startIconDrawable="@drawable/ic_person_bold">
 
                     <com.google.android.material.textfield.TextInputEditText
+
                         android:id="@+id/et_name"
                         style="@style/edit_text_style"
                         android:inputType="text" />
@@ -132,9 +130,10 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_description"
                         style="@style/edit_text_style"
+
                         android:layout_height="160dp"
                         android:background="@drawable/rectangle_shape"
-                        android:inputType="text" />
+                        android:inputType="textMultiLine" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -150,7 +149,7 @@
             android:layout_marginLeft="@dimen/spade_4xlarge"
             android:layout_marginRight="@dimen/spade_4xlarge"
             android:backgroundTint="@android:color/transparent"
-            app:cardCornerRadius="@dimen/spade_xlarge"
+
             app:cardElevation="@dimen/spade_xlarge"
             app:layout_constraintBottom_toBottomOf="@+id/cv_info"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -161,7 +160,7 @@
                 android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/spade_4xlarge"
-                android:backgroundTint="@color/bg_btn_purple"
+                android:backgroundTint="#4E005C"
                 android:text="@string/register"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_xlarge"
