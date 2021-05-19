@@ -31,6 +31,7 @@
                 app:cardCornerRadius="250dp">
 
                 <ImageView
+                    android:id="@+id/client_image"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:scaleType="centerCrop"
@@ -60,7 +61,7 @@
                 android:paddingLeft="@dimen/spade_medium"
                 android:paddingTop="@dimen/spade_medium"
                 android:paddingRight="@dimen/spade_medium"
-                android:paddingBottom="@dimen/spade_large">
+                android:paddingBottom="@dimen/spade_xlarge">
 
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -106,7 +107,7 @@
                     app:startIconDrawable="@drawable/ic_phone">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_phone"
+                        android:id="@+id/et_phone_number"
                         style="@style/edit_text_style"
                         android:inputType="phone" />
 
@@ -143,10 +144,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spade_100dp"
-            android:layout_marginRight="@dimen/spade_100dp"
+            android:layout_marginLeft="@dimen/spade_4xlarge"
+            android:layout_marginRight="@dimen/spade_4xlarge"
             android:backgroundTint="@android:color/transparent"
             app:cardCornerRadius="@dimen/spade_xlarge"
             app:cardElevation="@dimen/spade_xlarge"
